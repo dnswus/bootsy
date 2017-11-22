@@ -39,7 +39,7 @@ Bootsy.Modal = function(area) {
   this.$el.on('ajax:before', '.destroy-btn', this.showGalleryLoadingAnimation.bind(this));
 
   this.$el.on('ajax:success', '.destroy-btn', function(_e, data) {
-    this.deleteImage(data.id);
+    this.deleteImage(_e.detail[0].id);
   }.bind(this));
 
   this.$el.on('click', 'a[href="#refresh-gallery"]', this.requestImageGallery.bind(this));
